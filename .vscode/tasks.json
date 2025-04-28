@@ -1,0 +1,61 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "debug!",
+			"command": "cmake",
+			"args": [
+				"-B",
+				"build",
+				"-DCMAKE_BUILD_TYPE=Debug"
+			],
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"type": "shell",
+			"label": "build!",
+			"command": "cmake",
+			"args": [
+				"--build",
+				"build"
+			],
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "debug−and−build!!!",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"debug!",
+				"build!"
+			],
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+            "label": "clean",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
+            "command": "rm",
+            "args": [
+				"-rf",
+                "./*"
+            ]
+        }
+	]
+}
