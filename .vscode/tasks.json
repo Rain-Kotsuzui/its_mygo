@@ -3,12 +3,10 @@
 	"tasks": [
 		{
 			"type": "shell",
-			"label": "debug!",
-			"command": "cmake",
+			"label": "build",
+			"command": "colcon",
 			"args": [
-				"-B",
 				"build",
-				"-DCMAKE_BUILD_TYPE=Debug"
 			],
 			"problemMatcher": [
 				"$gcc"
@@ -20,11 +18,10 @@
 		},
 		{
 			"type": "shell",
-			"label": "build!",
-			"command": "cmake",
+			"label": "install",
+			"command": "source",
 			"args": [
-				"--build",
-				"build"
+				"install/setup.bash"
 			],
 			"problemMatcher": [
 				"$gcc"
@@ -35,27 +32,15 @@
 			}
 		},
 		{
-			"label": "debug−and−build!!!",
+			"label": "build and install!!!",
 			"dependsOrder": "sequence",
 			"dependsOn": [
-				"debug!",
-				"build!"
+				"build",
+				"install"
 			],
 			"problemMatcher": [
 				"$gcc"
 			]
-		},
-		{
-            "label": "clean",
-            "type": "shell",
-            "options": {
-                "cwd": "${workspaceFolder}/build"
-            },
-            "command": "rm",
-            "args": [
-				"-rf",
-                "./*"
-            ]
-        }
+		}
 	]
 }

@@ -4,8 +4,13 @@
             "name": "run!",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/node",
-            "args": [],
+            "program": "${workspaceFolder}/build/node_cpp/${fileBasenameNoExtension}",
+            "args": [
+                "ros2",
+                "run",
+                "node_cpp",
+                "${fileBasenameNoExtension}"
+            ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
@@ -18,7 +23,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "debug−and−build!!!",
+            "preLaunchTask": "build and install!!!",
             "logging": {
                 "trace": true,
                 "traceResponse": true,
