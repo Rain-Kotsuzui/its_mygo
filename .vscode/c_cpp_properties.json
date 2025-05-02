@@ -4,8 +4,8 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/opt/ros/humble/include/**"
-
+                "/opt/ros2/galactic/include/**",
+                "/opt/ros2/cyberdog/include/**"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
