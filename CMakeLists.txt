@@ -8,11 +8,11 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-
+find_package(geometry_msgs REQUIRED)
 
 add_executable(node src/node_cpp/node.cpp)
 
-ament_target_dependencies(node rclcpp)
+ament_target_dependencies(node rclcpp geometry_msgs)
 
 install(TARGETS
 node
